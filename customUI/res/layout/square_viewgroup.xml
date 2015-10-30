@@ -1,0 +1,52 @@
+<com.example.customui.viewgroup.SquareViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dip"
+    android:layout_height="wrap_content"
+    android:background="#AA333333"
+    android:paddingBottom="15dip"
+    android:paddingLeft="10dip"
+    android:layout_margin="5dip"
+    android:paddingRight="15dip"
+    android:paddingTop="15dip" >
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#FF4444"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#0000ff"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+</com.example.customui.viewgroup.SquareViewGroup>

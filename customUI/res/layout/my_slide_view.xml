@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ZhiHuDetailActivity" >
+
+    <com.example.customui.scroll.MySlideView
+        android:id="@+id/msv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="200dip"
+            android:layout_height="match_parent"
+            android:background="#FF00FF" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFF00" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:text="收藏1收藏2收藏3收藏4收藏5收藏6收藏7收藏8收藏9收藏10收藏11收藏14收藏15收藏16收藏21收藏32收藏35收藏47收藏" />
+        </LinearLayout>
+    </com.example.customui.scroll.MySlideView>
+
+</RelativeLayout>

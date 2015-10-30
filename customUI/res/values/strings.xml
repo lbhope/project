@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">customUI</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="textRadio">测试Radio</string>
+    <string name="textEdit">测试TextEditView1</string>
+    <string name="textEdit2">测试TextEditView2</string>
+    <string name="content">有的同学看了上面的效果图可能会疑惑，这里为什么没有答题人的布局呢？
+    其实是这样的，为了模拟上部的布局显示时，Title从Bar下面出现的效果，所以特意这样设计的。
+    我试过用linearLayout实现，效果也是可以实现的，但是当Title往下移动显示的时候，会覆盖在Bar上面，
+    这也很好理解，LinearLayout没有层次顺序，所以会遮挡。我试过View.bringToFront()，试图把Bar的布局提高层次
+    ，但是这样会导致布局的紊乱，在首次加载的时候，Bar会显示在最下面，是因为提高层次之后，Bar的布局重新计算，所以不按照L
+    inearLayout的布局规则来了。无奈之下，换成了Framelayout，但是又出现了问题，Bar的高度可以设置，但是Title的高度会随着文本的增加而改变，这样一来，最下面Author的布局的位置就不能设置了，因为不知道距离上面多远，所以我们只能在代码里面动态的计算Bar和Title的高度，然后在界面加载的时候，动态的给Author的布局设置MargenTop，保证位置的正确。有的同学看了上面的效果图可能会疑惑，这里为什么没有答题人的布局呢？
+    其实是这样的，为了模拟上部的布局显示时，Title从Bar下面出现的效果，所以特意这样设计的。我试过用linearLayout实现，效果也是可以实现的，但是当Title往下移动显示的时候，会覆盖在Bar上面，这也很好理解，LinearLayout没有层次顺序，所以会遮挡。我试过View.bringToFront()，试图把Bar的布局提高层次，但是这样会导致布局的紊乱，在首次加载的时候，Bar会显示在最下面，是因为提高层次之后，Bar的布局重新计算，所以不按照LinearLayout的布局规则来了。无奈之下，换成了Framelayout，但是又出现了问题，Bar的高度可以设置，但是Title的高度会随着文本的增加而改变，这样一来，最下面Author的布局的位置就不能设置了，因为不知道距离上面多远，所以我们只能在代码里面动态的计算Bar和Title的高度，然后在界面加载的时候，动态的给Author的布局设置MargenTop，保证位置的正确。</string>
+
+</resources>

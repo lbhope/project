@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dip"
+    android:orientation="vertical"
+    tools:context=".ZhiHuDetailActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textRadio"
+            android:textColor="@drawable/text_wbcolor_selector" >
+        </Button>
+
+        <Button
+            android:id="@+id/btn_textedit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textEdit" >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_scroll_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textEdit" >
+        </Button>
+    </LinearLayout>
+
+    
+    <include layout="@layout/widget_image_text" />
+
+    <include layout="@layout/image_text_view" />
+
+    <com.example.customui.view.ImageTextView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_margin="10dip"
+        android:background="#F5C5F5" >
+    </com.example.customui.view.ImageTextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击"
+        android:textSize="16sp" />
+
+    <com.example.customui.widget.testview.PaintTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="点击"
+        android:textSize="16sp" />
+
+</LinearLayout>

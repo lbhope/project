@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ui="http://schemas.android.com/apk/res/com.example.customui"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ZhiHuDetailActivity" >
+
+    <com.example.customui.view.TextEditView1
+        android:id="@+id/et_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        Text="@string/textEdit"
+        android:text="@string/textRadio" />
+
+    <com.example.customui.view.TextEditView2
+        android:id="@+id/et_textview2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        ui:Oriental="Vertical"
+        ui:Text="@string/textEdit2" />
+
+    <com.example.customui.view.ImageTextButton
+        android:text="imagebutton widget 1"
+        android:src="@drawable/home"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <com.example.customui.view.ImageTextButton
+        android:text="imagebutton widget 2"
+        android:src="@drawable/home"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <com.example.customui.view.DynamicControl
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+   
+
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <com.example.customui.view.scroll.MyScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.example.customui.view.scroll.ZhiHuTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/content"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+    </com.example.customui.view.scroll.MyScrollView>
+
+    <FrameLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/img_author"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/zhihu_author_bar" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:background="#DBDBDB"
+            android:gravity="center|left"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:text="为什么美国有那么多肌肉极其强大的肌肉男？"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/img_bar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/zhihu_action_bar" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:scaleType="fitXY"
+        android:src="@mipmap/zhihu_bottom" />
+
+</FrameLayout>
