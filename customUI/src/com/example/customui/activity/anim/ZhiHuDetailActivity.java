@@ -13,8 +13,6 @@ import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.OverScroller;
-import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.example.customui.BaseActivity;

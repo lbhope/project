@@ -9,17 +9,25 @@ import android.view.VelocityTracker;
  */
 public class VelocityTrackerUtils {
 
-	public static VelocityTracker mVelocityTracker;
+	private static VelocityTracker mVelocityTracker;
 
 	/**
 	 * 获取加速度
 	 * 
 	 * @return
 	 */
-	public static int[] getVelocity() {
+	public static int[] getVelocityLocation() {
 		mVelocityTracker.computeCurrentVelocity(1000);
 		return new int[] { (int) mVelocityTracker.getXVelocity(),
 				(int) mVelocityTracker.getYVelocity() };
+	}
+	public static int getYVelocity() {
+		mVelocityTracker.computeCurrentVelocity(1000);
+		return Math.abs((int) mVelocityTracker.getYVelocity());
+	}
+	public static int getXVelocity() {
+		mVelocityTracker.computeCurrentVelocity(1000);
+		return Math.abs((int) mVelocityTracker.getXVelocity());
 	}
 
 	/**
@@ -43,5 +51,5 @@ public class VelocityTrackerUtils {
 		}
 		mVelocityTracker.addMovement(event);
 	}
-
+	
 }

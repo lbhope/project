@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.HorizontalScrollView;
-import android.widget.OverScroller;
+import android.widget.Scroller;
 /**
  * http://blog.sina.com.cn/s/blog_6f561cc30101b7fe.html
  * 
@@ -20,16 +20,18 @@ import android.widget.OverScroller;
 public class ElasticHorizontalScrollView extends HorizontalScrollView {
 	
 	 //目的是达到一个延迟的效果
-    private static final float MOVE_FACTOR = 1f;
+    private static final float MOVE_FACTOR = 0.7f;
     
     private View view;  
     private Rect normal = new Rect();  
     private float x;  
     
     private int mTouchSlop;
-    private OverScroller mScroller;
-    
+    private Scroller mScroller;
+    //滚动的动画有问题，直接就返回了
+    private int scrollTime = 200;
     private boolean isSlide=false;
+    
     public ElasticHorizontalScrollView(Context context, AttributeSet attrs) {  
         super(context, attrs);  
         init(context);
@@ -42,7 +44,7 @@ public class ElasticHorizontalScrollView extends HorizontalScrollView {
     }  
     
     private void init(Context context){
-    	mScroller = new OverScroller(context);
+    	mScroller = new Scroller(context);
 		mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
   
@@ -89,41 +91,40 @@ public class ElasticHorizontalScrollView extends HorizontalScrollView {
 	   * @param ev
 	   */
     private void commOnTouchEvent(MotionEvent ev) {  
-    	
         int action = ev.getAction();  
         switch (action) {  
         case MotionEvent.ACTION_DOWN:  
+        	if (!mScroller.isFinished()) {
+				mScroller.abortAnimation();
+			}
             x = ev.getX();  
             break;  
         case MotionEvent.ACTION_UP:  
             if (isSlide) {
-            	System.out.println("---left: "+view.getLeft()+" n: "+normal.left+" sc: "+getScrollX());
-            	if (isScrollLeft()) {
-            		mScroller.startScroll(getScrollX(), 0,-view.getLeft(), 0, 200);
-				}else if (isScrollRight()) {
-					mScroller.startScroll(getScrollX(), 0,view.getLeft(), 0, 200);
-				}
             	
+//            	System.out.println("---left: "+view.getLeft()+" n: "+normal.left+" sc: "+getScrollX()
+//            			+" vright:"+view.getRight()+" vsc:"+view.getScrollX());
+//            	System.out.println("  "+ view.getWidth() +" "+ getWidth()+" " + getScrollX()+" "+mTouchSlop);
+            	if (isScrollLeft()) {
+            		mScroller.startScroll(0, 0,-view.getLeft(), 0, scrollTime);
+				}else if (isScrollRight()) {
+					mScroller.startScroll(view.getRight(), 0,getScrollX(), 0, scrollTime);
+				}
 				invalidate();
 			}
             isSlide = false;
             break;  
         case MotionEvent.ACTION_MOVE:
-        	
-        	final float preX = x;  
+    		final float preX = x;  
             float nowX = ev.getX();  
             int distanceX = (int) (preX - nowX);  
             scrollBy(distanceX, 0);  
             x = nowX;  
-        	
-//        	float curX= ev.getX();
-//       	    float disX = curX -x; 
 			if ((isScrollLeft()) || (isScrollRight())) {
-//				int disatnce = (int) (disX * MOVE_FACTOR);
-//	       	    scrollBy(-(int)disX, 0);  
-				view.layout(view.getLeft() - distanceX,view.getTop(), view.getRight()
-						- distanceX, view.getBottom());
-//	            System.out.println("-------------->"+disX+" left: "+view.getLeft()+" scrollX: "+getScrollX());
+				 int disatnce = (int) (distanceX * MOVE_FACTOR);
+				view.layout(view.getLeft() - disatnce,view.getTop(), view.getRight()
+						- disatnce, view.getBottom());
+//    	            System.out.println("-------------->"+disX+" left: "+view.getLeft()+" scrollX: "+getScrollX());
 			}
             break;  
   
@@ -137,30 +138,29 @@ public class ElasticHorizontalScrollView extends HorizontalScrollView {
     	super.onLayout(changed, l, t, r, b);
     	normal.set(view.getLeft(), view.getTop(), view
                 .getRight(), view.getBottom());
-    	System.out.println("--------->> "+normal.left+" "+view.getLeft());
     }
  
-  
    
 	@Override
 	public void computeScroll() {
 		if (mScroller.computeScrollOffset()) {
+			System.out.println("  "+mScroller.getCurrX());
 			scrollTo(mScroller.getCurrX(), 0);
 			postInvalidate();
 			if (mScroller.isFinished()) {
-				System.out.println(normal);
+				isSlide = false;
 				view.layout(0, normal.top, normal.right, normal.bottom);
 			}
 		}
 	}
     
-	private boolean isNeedMove() {  
-        int offset = view.getMeasuredWidth() - getWidth();  
-        int scrollX = getScrollX();  
-        if (scrollX == 0 || offset == scrollX)  
-            return true;  
-        return false;  
-    }  
+//	private boolean isNeedMove() {  
+//        int offset = view.getMeasuredWidth() - getWidth();  
+//        int scrollX = getScrollX();  
+//        if (scrollX == 0 || offset == scrollX)  
+//            return true;  
+//        return false;  
+//    }  
 	
     /**
      * 判断是否滚动到左边
@@ -173,6 +173,6 @@ public class ElasticHorizontalScrollView extends HorizontalScrollView {
      * 判断是否滚动到右边
      */
     private boolean isScrollRight() {
-        return  view.getWidth() <= getWidth() + getScrollX();
+        return  view.getWidth() <= getWidth() + getScrollX()+mTouchSlop;
     }
 }  

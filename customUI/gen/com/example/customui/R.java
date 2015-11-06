@@ -224,16 +224,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int globalguide_photo1=0x7f020000;
-        public static final int globalguide_photo2=0x7f020001;
-        public static final int globalguide_photo3=0x7f020002;
-        public static final int home=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int item_background=0x7f020005;
-        public static final int item_background_selected=0x7f020006;
-        public static final int item_background_selector=0x7f020007;
-        public static final int like=0x7f020008;
-        public static final int text_wbcolor_selector=0x7f020009;
+        public static final int bg=0x7f020000;
+        public static final int globalguide_photo1=0x7f020001;
+        public static final int globalguide_photo2=0x7f020002;
+        public static final int globalguide_photo3=0x7f020003;
+        public static final int head=0x7f020004;
+        public static final int home=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int item_background=0x7f020007;
+        public static final int item_background_selected=0x7f020008;
+        public static final int item_background_selector=0x7f020009;
+        public static final int like=0x7f02000a;
+        public static final int sliding_bg=0x7f02000b;
+        public static final int text_wbcolor_selector=0x7f02000c;
     }
     public static final class id {
         public static final int Horizontal=0x7f0a0000;
@@ -251,7 +254,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int et_textview=0x7f0a0014;
         public static final int et_textview2=0x7f0a0015;
         public static final int id_gestureLockViewGroup=0x7f0a0011;
-        public static final int id_main_ly=0x7f0a0017;
+        public static final int id_main_ly=0x7f0a0016;
         public static final int img_author=0x7f0a001d;
         public static final int img_bar=0x7f0a001f;
         public static final int img_tools=0x7f0a0020;
@@ -264,7 +267,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int msv=0x7f0a0010;
         public static final int rb_radio=0x7f0a0012;
         public static final int scroller=0x7f0a001a;
-        public static final int stick_title=0x7f0a0016;
+        public static final int stick_title=0x7f0a0017;
         public static final int text1=0x7f0a0005;
         public static final int tv_button_text=0x7f0a0019;
         public static final int tv_content=0x7f0a001b;
@@ -288,12 +291,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int swipe_listview_main=0x7f04000d;
         public static final int test_layout=0x7f04000e;
         public static final int textedit=0x7f04000f;
-        public static final int view_scroll_sticknav=0x7f040010;
-        public static final int view_scroll_vertical_linearlayout=0x7f040011;
-        public static final int view_scroll_viewdraghelper=0x7f040012;
-        public static final int widget_image_text=0x7f040013;
-        public static final int widget_testview=0x7f040014;
-        public static final int zhihu_detail_main=0x7f040015;
+        public static final int view_scroll_horizontal_layout=0x7f040010;
+        public static final int view_scroll_sticknav=0x7f040011;
+        public static final int view_scroll_vertical_linearlayout=0x7f040012;
+        public static final int view_scroll_viewdraghelper=0x7f040013;
+        public static final int widget_image_text=0x7f040014;
+        public static final int widget_testview=0x7f040015;
+        public static final int zhihu_detail_main=0x7f040016;
     }
     public static final class menu {
         public static final int main=0x7f090000;

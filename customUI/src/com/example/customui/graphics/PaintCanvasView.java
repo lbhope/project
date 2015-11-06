@@ -7,14 +7,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
-import android.graphics.Path.FillType;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import android.widget.TextView;
 
 public class PaintCanvasView extends View {
 	private Paint mPaint;
@@ -36,12 +34,12 @@ public class PaintCanvasView extends View {
 		
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
-		mPaint.setColor(Color.GREEN);//ÉèÖÃ»­±ÊÑÕÉ«
-		mPaint.setStyle(Style.FILL);//ÉèÖÃ»­±Ê·ç¸ñ£¬¿ÕÐÄ»òÊµÐÄ
-		mPaint.setStrokeWidth(10);//»­±Ê¿í¶È
-		mPaint.setAlpha(100);//Í¸Ã÷¶È
+		mPaint.setColor(Color.GREEN);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½É«
+		mPaint.setStyle(Style.FILL);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ê·ï¿½ñ£¬¿ï¿½ï¿½Ä»ï¿½Êµï¿½ï¿½
+		mPaint.setStrokeWidth(10);//ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½
+		mPaint.setAlpha(100);//Í¸ï¿½ï¿½ï¿½ï¿½
 		mPaint.setTextAlign(Align.CENTER);
-		mPaint.setTextSize(setTextSize(20));//×ÖÌå´óÐ¡
+		mPaint.setTextSize(setTextSize(20));//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡
 		width = getResources().getDisplayMetrics().widthPixels;
 		height = getResources().getDisplayMetrics().heightPixels;
 
@@ -52,22 +50,22 @@ public class PaintCanvasView extends View {
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		
-		canvas.drawColor(Color.WHITE); //ÉèÖÃ»­²¼ÑÕÉ«
+		canvas.drawColor(Color.WHITE); //ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½É«
 		
-//		canvas.clipRect(0, 0, 200, 200);//ÉèÖÃ²Ã¼ôÇø
+//		canvas.clipRect(0, 0, 200, 200);//ï¿½ï¿½ï¿½Ã²Ã¼ï¿½ï¿½ï¿½
 		
-		//»æÖÆ¾ØÐÎ
-		canvas.save();//Ëø¶¨»­²¼
-		canvas.translate(50, 50);//Ê¹µ±Ç°µÄ×ø±êÒÆ¶¯µ½50£¬50
-		canvas.rotate(45.0f);//Ðý×ª»­²¼
+		//ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½ï¿½
+		canvas.save();//ï¿½ï¿½ï¿½ï¿½
+		canvas.translate(50, 50);//Ê¹ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½50ï¿½ï¿½50
+		canvas.rotate(45.0f);//ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½
 		canvas.drawRect(new Rect(50, 50, 80, 80),mPaint);
 		
-		canvas.restore();//½â³ý»­²¼Ëø¶¨
+		canvas.restore();//ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		mPaint.setColor(Color.RED);
 		canvas.drawRect(new Rect(50, 50, 100, 100),mPaint);
 		
-		//»æÖÆÈý½ÇÐÎ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Path path = new Path();
 		path.moveTo(100, 100);
 		path.lineTo(150, 150);
@@ -78,7 +76,7 @@ public class PaintCanvasView extends View {
 		mPaint.setColor(Color.BLUE);
 		canvas.drawPath(path, mPaint);
 		
-		//»æÖÆ»¡ÐÎ×Ö·û´®
+		//ï¿½ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
 		float r = getDip(100);
 		mPaint.setColor(Color.RED);
 	    canvas.save();

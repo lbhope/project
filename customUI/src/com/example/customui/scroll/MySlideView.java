@@ -1,13 +1,13 @@
 package com.example.customui.scroll;
 
-import com.example.customui.util.Logger;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
+
+import com.example.customui.util.Logger;
 
 public class MySlideView extends ViewGroup{  
   
@@ -27,7 +27,7 @@ public class MySlideView extends ViewGroup{
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);  
         menu = getChildAt(0);  
         content = getChildAt(1);  
-        //¸ù¾ÝÌá¹©µÄ´óÐ¡ÖµºÍÄ£Ê½´´½¨²âÁ¿Öµ£¬²¢¼ÆËãmenuµÄÎ»ÖÃ  
+        //ï¿½ï¿½ï¿½ï¿½á¹©ï¿½Ä´ï¿½Ð¡Öµï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½menuï¿½ï¿½Î»ï¿½ï¿½  
         menu.measure(MeasureSpec.makeMeasureSpec(menu.getLayoutParams().width, MeasureSpec.EXACTLY)  
                 , heightMeasureSpec);  
           
@@ -35,7 +35,7 @@ public class MySlideView extends ViewGroup{
     }  
       
     /** 
-     * ÉèÖÃviewµÄÎ»ÖÃ 
+     * ï¿½ï¿½ï¿½ï¿½viewï¿½ï¿½Î»ï¿½ï¿½ 
      */  
     @Override  
     protected void onLayout(boolean changed, int l, int t, int r, int b) {  
@@ -63,7 +63,7 @@ public class MySlideView extends ViewGroup{
         case MotionEvent.ACTION_MOVE:  
             int disX = (int) (lastX - event.getX());  
             lastX = (int) event.getX();  
-            int nextScrollX = getScrollX()+disX; // ¿ÉÄÜµÄ£¬ÏÂÒ»¸ö mScrollX µÄÖµ  
+            int nextScrollX = getScrollX()+disX; // ï¿½ï¿½ï¿½ÜµÄ£ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ mScrollX ï¿½ï¿½Öµ  
             //[ main: MySlideView.java:66 ] - getScrollX:::: -485   disX::: -14 n: -499 g:388
             Logger.getLogger().i("getScrollX:::: "+getScrollX()+"   disX::: "+disX+" n: "+nextScrollX+" g:"+event.getX());
 //            if(getScrollX()<=0 && getScrollX()>=-menu.getWidth()){  
@@ -89,11 +89,11 @@ public class MySlideView extends ViewGroup{
         int distance = 0;  
         if(!isMenuShow){  
 //          scrollTo(0,0);  
-        	//²»ÏÔÊ¾×ó±ß²Ëµ¥£¬ÐèÒª²Ëµ¥Ïò×ó¹ö¶¯Òþ²Ø£¬Ïò×ó¹ö¶¯distanceÒª´óÓÚ0£¬µ±Ç°µ½×ó±ßµÄ¾àÀëÊÇgetScrollX()
+        	//ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ß²Ëµï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½distanceÒªï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ßµÄ¾ï¿½ï¿½ï¿½ï¿½ï¿½getScrollX()
             distance = 0-getScrollX();  
         }else{  
 //          scrollTo(-menu.getWidth(),0);  
-        	//ÏÔÊ¾²Ëµ¥£¬ÒªÏòÓÒ¹ö¶¯distanceÐ¡ÓÚ0£¬Òª¹ö¶¯µÄ¾àÀëÊÇ²Ëµ¥µÄ¿í¶È¼õÈ¥µ±Ç°µÄÆ«ÒÆÁ¿£¬ÓÒ±ßÎª¸º×î×ó±ßµÄ×ø±êÊÇ-menu.getWidth()
+        	//ï¿½ï¿½Ê¾ï¿½Ëµï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½distanceÐ¡ï¿½ï¿½0ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½Ç²Ëµï¿½ï¿½Ä¿ï¿½È¼ï¿½È¥ï¿½ï¿½Ç°ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò±ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-menu.getWidth()
             distance = -menu.getWidth()-getScrollX();  
             Logger.getLogger().i("-----------------------> distance "+distance);
         }  
@@ -102,7 +102,7 @@ public class MySlideView extends ViewGroup{
           
     }  
     /** 
-     * ¹ö¶¯£¬×ÓView¹ö¶¯ 
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Viewï¿½ï¿½ï¿½ï¿½ 
      */  
     @Override  
     public void computeScroll() {  
@@ -114,7 +114,7 @@ public class MySlideView extends ViewGroup{
     private Scroller scroller ;  
   
     /** 
-     * ÇÐ»»×´Ì¬ 
+     * ï¿½Ð»ï¿½×´Ì¬ 
      */  
     public void changeState() {  
         isMenuShow = !isMenuShow;  

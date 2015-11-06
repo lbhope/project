@@ -9,26 +9,23 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
- 
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.RelativeLayout;
 
 import com.example.customui.R;
-import com.example.customui.util.Logger;
 import com.example.customui.view.GestureLockView.Mode;
  
 /** 
  * http://blog.csdn.net/lmj623565791/article/details/36236113
- * ÕûÌå°üº¬n*n¸öGestureLockView,Ã¿¸öGestureLockView¼ä¼ä¸ômMarginBetweenLockView£¬ 
- * ×îÍâ²ãµÄGestureLockViewÓëÈÝÆ÷´æÔÚmMarginBetweenLockViewµÄÍâ±ß¾à 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½n*nï¿½ï¿½GestureLockView,Ã¿ï¿½ï¿½GestureLockViewï¿½ï¿½ï¿½ï¿½mMarginBetweenLockViewï¿½ï¿½ 
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GestureLockViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mMarginBetweenLockViewï¿½ï¿½ï¿½ï¿½ß¾ï¿½ 
  *  
- * ¹ØÓÚGestureLockViewµÄ±ß³¤£¨n*n£©£º n * mGestureLockViewWidth + ( n + 1 ) * 
- * mMarginBetweenLockView = mWidth ; µÃ£ºmGestureLockViewWidth = 4 * mWidth / ( 5 
- * * mCount + 1 ) ×¢£ºmMarginBetweenLockView = mGestureLockViewWidth * 0.25 ; 
+ * ï¿½ï¿½ï¿½ï¿½GestureLockViewï¿½Ä±ß³ï¿½ï¿½ï¿½n*nï¿½ï¿½ï¿½ï¿½ n * mGestureLockViewWidth + ( n + 1 ) * 
+ * mMarginBetweenLockView = mWidth ; ï¿½Ã£ï¿½mGestureLockViewWidth = 4 * mWidth / ( 5 
+ * * mCount + 1 ) ×¢ï¿½ï¿½mMarginBetweenLockView = mGestureLockViewWidth * 0.25 ; 
  *  
  * @author zhy 
  *  
@@ -38,78 +35,78 @@ public class GestureLockViewGroup extends RelativeLayout
   
     private static final String TAG = "GestureLockViewGroup";  
     /** 
-     * ±£´æËùÓÐµÄGestureLockView 
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½GestureLockView 
      */  
     private GestureLockView[] mGestureLockViews;  
     /** 
-     * Ã¿¸ö±ßÉÏµÄGestureLockViewµÄ¸öÊý 
+     * Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½GestureLockViewï¿½Ä¸ï¿½ï¿½ï¿½ 
      */  
     private int mCount = 4;  
     /** 
-     * ´æ´¢´ð°¸ 
+     * ï¿½æ´¢ï¿½ï¿½ 
      */  
     private int[] mAnswer = { 0, 1, 2, 5, 8 };  
     /** 
-     * ±£´æÓÃ»§Ñ¡ÖÐµÄGestureLockViewµÄid 
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½Ðµï¿½GestureLockViewï¿½ï¿½id 
      */  
     private List<Integer> mChoose = new ArrayList<Integer>();  
   
     private Paint mPaint;  
     /** 
-     * Ã¿¸öGestureLockViewÖÐ¼äµÄ¼ä¾à ÉèÖÃÎª£ºmGestureLockViewWidth * 25% 
+     * Ã¿ï¿½ï¿½GestureLockViewï¿½Ð¼ï¿½Ä¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½mGestureLockViewWidth * 25% 
      */  
     private int mMarginBetweenLockView = 30;  
     /** 
-     * GestureLockViewµÄ±ß³¤ 4 * mWidth / ( 5 * mCount + 1 ) 
+     * GestureLockViewï¿½Ä±ß³ï¿½ 4 * mWidth / ( 5 * mCount + 1 ) 
      */  
     private int mGestureLockViewWidth;  
   
     /** 
-     * GestureLockViewÎÞÊÖÖ¸´¥ÃþµÄ×´Ì¬ÏÂÄÚÔ²µÄÑÕÉ« 
+     * GestureLockViewï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½É« 
      */  
     private int mNoFingerInnerCircleColor = 0xFF939090;  
     /** 
-     * GestureLockViewÎÞÊÖÖ¸´¥ÃþµÄ×´Ì¬ÏÂÍâÔ²µÄÑÕÉ« 
+     * GestureLockViewï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½É« 
      */  
     private int mNoFingerOuterCircleColor = 0xFFE0DBDB;  
     /** 
-     * GestureLockViewÊÖÖ¸´¥ÃþµÄ×´Ì¬ÏÂÄÚÔ²ºÍÍâÔ²µÄÑÕÉ« 
+     * GestureLockViewï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½É« 
      */  
     private int mFingerOnColor = 0xFF378FC9;  
     /** 
-     * GestureLockViewÊÖÖ¸Ì§ÆðµÄ×´Ì¬ÏÂÄÚÔ²ºÍÍâÔ²µÄÑÕÉ« 
+     * GestureLockViewï¿½ï¿½Ö¸Ì§ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½É« 
      */  
     private int mFingerUpColor = 0xFFFF0000;  
   
     /** 
-     * ¿í¶È 
+     * ï¿½ï¿½ï¿½ 
      */  
     private int mWidth;  
     /** 
-     * ¸ß¶È 
+     * ï¿½ß¶ï¿½ 
      */  
     private int mHeight;  
   
     private Path mPath;  
     /** 
-     * Ö¸ÒýÏßµÄ¿ªÊ¼Î»ÖÃx 
+     * Ö¸ï¿½ï¿½ï¿½ßµÄ¿ï¿½Ê¼Î»ï¿½ï¿½x 
      */  
     private int mLastPathX;  
     /** 
-     * Ö¸ÒýÏßµÄ¿ªÊ¼Î»ÖÃy 
+     * Ö¸ï¿½ï¿½ï¿½ßµÄ¿ï¿½Ê¼Î»ï¿½ï¿½y 
      */  
     private int mLastPathY;  
     /** 
-     * Ö¸ÒýÏÂµÄ½áÊøÎ»ÖÃ 
+     * Ö¸ï¿½ï¿½ï¿½ÂµÄ½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ 
      */  
     private Point mTmpTarget = new Point();  
   
     /** 
-     * ×î´ó³¢ÊÔ´ÎÊý 
+     * ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ 
      */  
     private int mTryTimes = 4;  
     /** 
-     * »Øµ÷½Ó¿Ú 
+     * ï¿½Øµï¿½ï¿½Ó¿ï¿½ 
      */  
     private OnGestureLockViewListener mOnGestureLockViewListener;  
   
@@ -123,7 +120,7 @@ public class GestureLockViewGroup extends RelativeLayout
     {  
         super(context, attrs, defStyle);  
         /** 
-         * »ñµÃËùÓÐ×Ô¶¨ÒåµÄ²ÎÊýµÄÖµ 
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Öµ 
          */  
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs,  
                 R.styleable.GestureLockViewGroup, defStyle, 0);  
@@ -160,7 +157,7 @@ public class GestureLockViewGroup extends RelativeLayout
   
         a.recycle();  
   
-        // ³õÊ¼»¯»­±Ê  
+        // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);  
         mPaint.setStyle(Paint.Style.STROKE);  
         // mPaint.setStrokeWidth(20);  
@@ -185,53 +182,53 @@ public class GestureLockViewGroup extends RelativeLayout
   
         // setMeasuredDimension(mWidth, mHeight);  
   
-        // ³õÊ¼»¯mGestureLockViews  
+        // ï¿½ï¿½Ê¼ï¿½ï¿½mGestureLockViews  
         if (mGestureLockViews == null)  
         {  
             mGestureLockViews = new GestureLockView[mCount * mCount];  
-            // ¼ÆËãÃ¿¸öGestureLockViewµÄ¿í¶È  
+            // ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½GestureLockViewï¿½Ä¿ï¿½ï¿½  
             mGestureLockViewWidth = (int) (4 * mWidth * 1.0f / (5 * mCount + 1));  
-            //¼ÆËãÃ¿¸öGestureLockViewµÄ¼ä¾à  
+            //ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½GestureLockViewï¿½Ä¼ï¿½ï¿½  
             mMarginBetweenLockView = (int) (mGestureLockViewWidth * 0.25);  
-            // ÉèÖÃ»­±ÊµÄ¿í¶ÈÎªGestureLockViewµÄÄÚÔ²Ö±¾¶ÉÔÎ¢Ð¡µã£¨²»Ï²»¶µÄ»°£¬Ëæ±ãÉè£©  
+            // ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ÊµÄ¿ï¿½ï¿½ÎªGestureLockViewï¿½ï¿½ï¿½ï¿½Ô²Ö±ï¿½ï¿½ï¿½ï¿½Î¢Ð¡ï¿½ã£¨ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è£©  
             mPaint.setStrokeWidth(mGestureLockViewWidth * 0.29f);  
   
             for (int i = 0; i < mGestureLockViews.length; i++)  
             {  
-                //³õÊ¼»¯Ã¿¸öGestureLockView  
+                //ï¿½ï¿½Ê¼ï¿½ï¿½Ã¿ï¿½ï¿½GestureLockView  
                 mGestureLockViews[i] = new GestureLockView(getContext(),  
                         mNoFingerInnerCircleColor, mNoFingerOuterCircleColor,  
                         mFingerOnColor, mFingerUpColor);  
                 mGestureLockViews[i].setId(i + 1);  
-                //ÉèÖÃ²ÎÊý£¬Ö÷ÒªÊÇ¶¨Î»GestureLockView¼äµÄÎ»ÖÃ  
+                //ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç¶ï¿½Î»GestureLockViewï¿½ï¿½ï¿½Î»ï¿½ï¿½  
                 RelativeLayout.LayoutParams lockerParams = new RelativeLayout.LayoutParams(  
                         mGestureLockViewWidth, mGestureLockViewWidth);  
   
-                // ²»ÊÇÃ¿ÐÐµÄµÚÒ»¸ö£¬ÔòÉèÖÃÎ»ÖÃÎªÇ°Ò»¸öµÄÓÒ±ß  
+                // ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ÐµÄµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ÎªÇ°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ò±ï¿½  
                 if (i % mCount != 0)  
                 {  
                     lockerParams.addRule(RelativeLayout.RIGHT_OF,  
                             mGestureLockViews[i - 1].getId());  
                 }  
-                // ´ÓµÚ¶þÐÐ¿ªÊ¼£¬ÉèÖÃÎªÉÏÒ»ÐÐÍ¬Ò»Î»ÖÃViewµÄÏÂÃæ  
+                // ï¿½ÓµÚ¶ï¿½ï¿½Ð¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ò»ï¿½ï¿½Í¬Ò»Î»ï¿½ï¿½Viewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
                 if (i > mCount - 1)  
                 {  
                     lockerParams.addRule(RelativeLayout.BELOW,  
                             mGestureLockViews[i - mCount].getId());  
                 }  
-                //ÉèÖÃÓÒÏÂ×óÉÏµÄ±ß¾à  
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ±ß¾ï¿½  
                 int rightMargin = mMarginBetweenLockView;  
                 int bottomMargin = mMarginBetweenLockView;  
                 int leftMagin = 0;  
                 int topMargin = 0;  
                 /** 
-                 * Ã¿¸öView¶¼ÓÐÓÒÍâ±ß¾àºÍµ×Íâ±ß¾à µÚÒ»ÐÐµÄÓÐÉÏÍâ±ß¾à µÚÒ»ÁÐµÄÓÐ×óÍâ±ß¾à 
+                 * Ã¿ï¿½ï¿½Viewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½Íµï¿½ï¿½ï¿½ß¾ï¿½ ï¿½ï¿½Ò»ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½ ï¿½ï¿½Ò»ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½ 
                  */  
-                if (i >= 0 && i < mCount)// µÚÒ»ÐÐ  
+                if (i >= 0 && i < mCount)// ï¿½ï¿½Ò»ï¿½ï¿½  
                 {  
                     topMargin = mMarginBetweenLockView;  
                 }  
-                if (i % mCount == 0)// µÚÒ»ÁÐ  
+                if (i % mCount == 0)// ï¿½ï¿½Ò»ï¿½ï¿½  
                 {  
                     leftMagin = mMarginBetweenLockView;  
                 }  
@@ -259,7 +256,7 @@ public class GestureLockViewGroup extends RelativeLayout
         switch (action)  
         {  
         case MotionEvent.ACTION_DOWN:  
-            // ÖØÖÃ  
+            // ï¿½ï¿½ï¿½ï¿½  
             reset();  
             break;  
         case MotionEvent.ACTION_MOVE:  
@@ -275,22 +272,22 @@ public class GestureLockViewGroup extends RelativeLayout
                     child.setMode(Mode.STATUS_FINGER_ON);  
                     if (mOnGestureLockViewListener != null)  
                         mOnGestureLockViewListener.onBlockSelected(cId);  
-                    // ÉèÖÃÖ¸ÒýÏßµÄÆðµã  
+                    // ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½  
                     mLastPathX = child.getLeft() / 2 + child.getRight() / 2;  
                     mLastPathY = child.getTop() / 2 + child.getBottom() / 2;  
   
-                    if (mChoose.size() == 1)// µ±Ç°Ìí¼ÓÎªµÚÒ»¸ö  
+                    if (mChoose.size() == 1)// ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Îªï¿½ï¿½Ò»ï¿½ï¿½  
                     {  
                         mPath.moveTo(mLastPathX, mLastPathY);  
                     } else  
-                    // ·ÇµÚÒ»¸ö£¬½«Á½ÕßÊ¹ÓÃÏßÁ¬ÉÏ  
+                    // ï¿½Çµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
                     {  
                         mPath.lineTo(mLastPathX, mLastPathY);  
                     }  
   
                 }  
             }  
-            // Ö¸ÒýÏßµÄÖÕµã  
+            // Ö¸ï¿½ï¿½ï¿½ßµï¿½ï¿½Õµï¿½  
             mTmpTarget.x = x;  
             mTmpTarget.y = y;  
             break;  
@@ -300,7 +297,7 @@ public class GestureLockViewGroup extends RelativeLayout
             mPaint.setAlpha(50);  
             this.mTryTimes--;  
   
-            // »Øµ÷ÊÇ·ñ³É¹¦  
+            // ï¿½Øµï¿½ï¿½Ç·ï¿½É¹ï¿½  
             if (mOnGestureLockViewListener != null && mChoose.size() > 0)  
             {  
                 mOnGestureLockViewListener.onGestureEvent(checkAnswer());  
@@ -312,14 +309,14 @@ public class GestureLockViewGroup extends RelativeLayout
   
             Log.e(TAG, "mUnMatchExceedBoundary = " + mTryTimes);  
             Log.e(TAG, "mChoose = " + mChoose);  
-            // ½«ÖÕµãÉèÖÃÎ»ÖÃÎªÆðµã£¬¼´È¡ÏûÖ¸ÒýÏß  
+            // ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½ã£¬ï¿½ï¿½È¡ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½  
             mTmpTarget.x = mLastPathX;  
             mTmpTarget.y = mLastPathY;  
   
-            // ¸Ä±ä×ÓÔªËØµÄ×´Ì¬ÎªUP  
+            // ï¿½Ä±ï¿½ï¿½ï¿½Ôªï¿½Øµï¿½×´Ì¬ÎªUP  
             changeItemMode();  
               
-            // ¼ÆËãÃ¿¸öÔªËØÖÐ¼ýÍ·ÐèÒªÐý×ªµÄ½Ç¶È  
+            // ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ôªï¿½ï¿½ï¿½Ð¼ï¿½Í·ï¿½ï¿½Òªï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½  
             for (int i = 0; i + 1 < mChoose.size(); i++)  
             {  
                 int childId = mChoose.get(i);  
@@ -330,7 +327,7 @@ public class GestureLockViewGroup extends RelativeLayout
   
                 int dx = nextChild.getLeft() - startChild.getLeft();  
                 int dy = nextChild.getTop() - startChild.getTop();  
-                // ¼ÆËã½Ç¶È  
+                // ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½  
                 int angle = (int) Math.toDegrees(Math.atan2(dy, dx)) + 90;  
                 startChild.setArrowDegree(angle);  
             }  
@@ -354,7 +351,7 @@ public class GestureLockViewGroup extends RelativeLayout
   
     /** 
      *  
-     * ×öÒ»Ð©±ØÒªµÄÖØÖÃ 
+     * ï¿½ï¿½Ò»Ð©ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
      */  
     private void reset()  
     {  
@@ -367,7 +364,7 @@ public class GestureLockViewGroup extends RelativeLayout
         }  
     }  
     /** 
-     * ¼ì²éÓÃ»§»æÖÆµÄÊÖÊÆÊÇ·ñÕýÈ· 
+     * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½È· 
      * @return 
      */  
     private boolean checkAnswer()  
@@ -385,7 +382,7 @@ public class GestureLockViewGroup extends RelativeLayout
     }  
       
     /** 
-     * ¼ì²éµ±Ç°×ó±ßÊÇ·ñÔÚchildÖÐ 
+     * ï¿½ï¿½éµ±Ç°ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½childï¿½ï¿½ 
      * @param child 
      * @param x 
      * @param y 
@@ -394,7 +391,7 @@ public class GestureLockViewGroup extends RelativeLayout
     private boolean checkPositionInChild(View child, int x, int y)  
     {  
   
-        //ÉèÖÃÁËÄÚ±ß¾à£¬¼´x,y±ØÐëÂäÈëÏÂGestureLockViewµÄÄÚ²¿ÖÐ¼äµÄÐ¡ÇøÓòÖÐ£¬¿ÉÒÔÍ¨¹ýµ÷ÕûpaddingÊ¹µÃx,yÂäÈë·¶Î§²»±ä´ó£¬»òÕß²»ÉèÖÃpadding  
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú±ß¾à£¬ï¿½ï¿½x,yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GestureLockViewï¿½ï¿½ï¿½Ú²ï¿½ï¿½Ð¼ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½paddingÊ¹ï¿½ï¿½x,yï¿½ï¿½ï¿½ë·¶Î§ï¿½ï¿½ï¿½ï¿½ó£¬»ï¿½ï¿½ß²ï¿½ï¿½ï¿½ï¿½ï¿½padding  
         int padding = (int) (mGestureLockViewWidth * 0.15);  
   
         if (x >= child.getLeft() + padding && x <= child.getRight() - padding  
@@ -407,7 +404,7 @@ public class GestureLockViewGroup extends RelativeLayout
     }  
   
     /** 
-     * Í¨¹ýx,y»ñµÃÂäÈëµÄGestureLockView 
+     * Í¨ï¿½ï¿½x,yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GestureLockView 
      * @param x 
      * @param y 
      * @return 
@@ -427,7 +424,7 @@ public class GestureLockViewGroup extends RelativeLayout
     }  
   
     /** 
-     * ÉèÖÃ»Øµ÷½Ó¿Ú 
+     * ï¿½ï¿½ï¿½Ã»Øµï¿½ï¿½Ó¿ï¿½ 
      *  
      * @param listener 
      */  
@@ -437,7 +434,7 @@ public class GestureLockViewGroup extends RelativeLayout
     }  
   
     /** 
-     * ¶ÔÍâ¹«²¼ÉèÖÃ´ð°¸µÄ·½·¨ 
+     * ï¿½ï¿½ï¿½â¹«ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ð°¸µÄ·ï¿½ï¿½ï¿½ 
      *  
      * @param answer 
      */  
@@ -447,7 +444,7 @@ public class GestureLockViewGroup extends RelativeLayout
     }  
   
     /** 
-     * ÉèÖÃ×î´óÊµÑé´ÎÊý 
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ 
      *  
      * @param boundary 
      */  
@@ -460,12 +457,12 @@ public class GestureLockViewGroup extends RelativeLayout
     public void dispatchDraw(Canvas canvas)  
     {  
         super.dispatchDraw(canvas);  
-        //»æÖÆGestureLockView¼äµÄÁ¬Ïß  
+        //ï¿½ï¿½ï¿½ï¿½GestureLockViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         if (mPath != null)  
         {  
             canvas.drawPath(mPath, mPaint);  
         }  
-        //»æÖÆÖ¸ÒýÏß  
+        //ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½  
         if (mChoose.size() > 0)  
         {  
             if (mLastPathX != 0 && mLastPathY != 0)  {
@@ -479,21 +476,21 @@ public class GestureLockViewGroup extends RelativeLayout
     public interface OnGestureLockViewListener  
     {  
         /** 
-         * µ¥¶ÀÑ¡ÖÐÔªËØµÄId 
+         * ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ôªï¿½Øµï¿½Id 
          *  
          * @param position 
          */  
         public void onBlockSelected(int cId);  
   
         /** 
-         * ÊÇ·ñÆ¥Åä 
+         * ï¿½Ç·ï¿½Æ¥ï¿½ï¿½ 
          *  
          * @param matched 
          */  
         public void onGestureEvent(boolean matched);  
   
         /** 
-         * ³¬¹ý³¢ÊÔ´ÎÊý 
+         * ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ 
          */  
         public void onUnmatchedExceedBoundary();  
     }  

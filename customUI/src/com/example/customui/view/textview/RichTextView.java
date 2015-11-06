@@ -17,7 +17,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.example.customui.R;
 import com.example.customui.util.DensityUtil;
 /**
  * 富文本textview

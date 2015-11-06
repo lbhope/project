@@ -7,7 +7,6 @@ import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Scroller;
 
 public class MyScrollViewGesture extends ViewGroup {
@@ -26,11 +25,11 @@ public class MyScrollViewGesture extends ViewGroup {
 	private GestureDetector gestureDetector;
 	private Scroller scroller;
 	/**
-	 * ÊÇ·ñ·¢Éú¿ìËÙ»¬¶¯
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½
 	 */
 	private boolean isFling = false;
 	/**
-	 * µ±Ç°ÆÁÄ»ÏÔÊ¾µÄ×ÓviewµÄÏÂ±ê
+	 * ï¿½ï¿½Ç°ï¿½ï¿½Ä»ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½viewï¿½ï¿½ï¿½Â±ï¿½
 	 */
 	private int curId;
 	
@@ -50,7 +49,7 @@ public class MyScrollViewGesture extends ViewGroup {
 
 			@Override
 			/**
-			 * Õý³£»¬¶¯ÆÁÄ»Ê±µÄ»Øµ÷·½·¨
+			 * ï¿½ï¿½ï¿½ï¿½ï¿½Ä»Ê±ï¿½Ä»Øµï¿½ï¿½ï¿½ï¿½ï¿½
 			 */
 			public boolean onScroll(MotionEvent e1, MotionEvent e2,
 					float distanceX, float distanceY) {
@@ -64,12 +63,12 @@ public class MyScrollViewGesture extends ViewGroup {
 
 			@Override
 			/**
-			 * ·¢Éú¿ìËÙ»¬¶¯Ê±µÄ»Øµ÷·½·¨ 
+			 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½Ê±ï¿½Ä»Øµï¿½ï¿½ï¿½ï¿½ï¿½ 
 			 */
 			public boolean onFling(MotionEvent e1, MotionEvent e2,
 					float velocityX, float velocityY) {
 				isFling = true;
-				if (velocityX > 0 && curId > 0) { // ¿ìËÙÏòÓÒ»¬
+				if (velocityX > 0 && curId > 0) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½
 					moveToDest(curId - 1);
 				} else if (velocityX < 0 && curId < getChildCount()) {
 					moveToDest(curId + 1);
@@ -88,7 +87,7 @@ public class MyScrollViewGesture extends ViewGroup {
 	}
 
 	/**
-	 * ¶Ô×Óview½øÐÐÅÅÁÐ²¼¾Ö
+	 * ï¿½ï¿½ï¿½ï¿½viewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
 	 */
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -118,7 +117,7 @@ public class MyScrollViewGesture extends ViewGroup {
 	}
 
 	/**
-	 * ½«viewGroupµÄÄÚÈÝÒÆ¶¯µ½ÊÊµ±µÄÎ»ÖÃÉÏ
+	 * ï¿½ï¿½viewGroupï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 	 */
 	private void moveToDest() {
 		int destId = (getWidth() / 2 + getScrollX()) / getWidth();
@@ -127,7 +126,7 @@ public class MyScrollViewGesture extends ViewGroup {
 	}
 
 	/**
-	 * ½«Ö¸¶¨ÏÂ±êµÄ×ÓviewÒÆ¶¯µ½ÆÁÄ»ÉÏÀ´
+	 * ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½viewï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param destId
 	 */
@@ -142,9 +141,9 @@ public class MyScrollViewGesture extends ViewGroup {
 		int distance = destId * getWidth() - getScrollX();
 		// scrollBy(distance, 0);
 		// scroller.startScroll(getScrollX(), 0, distance, 0);
-		//¿ªÊ¼ÒÆ¶¯
+		//ï¿½ï¿½Ê¼ï¿½Æ¶ï¿½
 		scroller.startScroll(getScrollX(), 0, distance, 0, Math.abs(distance));
-		invalidate(); // Ë¢ÐÂÊÓÍ¼ »áÖ´ÐÐ computeScroll£¨£© Õâ¸ö·½·¨
+		invalidate(); // Ë¢ï¿½ï¿½ï¿½ï¿½Í¼ ï¿½ï¿½Ö´ï¿½ï¿½ computeScrollï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	@Override

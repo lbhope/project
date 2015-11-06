@@ -1,13 +1,13 @@
 package com.example.customui.view;
 
-import com.example.customui.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
+
+import com.example.customui.R;
 
 public class MyRadioButton extends RadioButton implements OnCheckedChangeListener {
 	private String mValue;

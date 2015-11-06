@@ -1,0 +1,36 @@
+<com.example.customui.scroll.ElasticHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_main_ly"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/background_dark" >
+
+        <ImageView
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_margin="10dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg" />
+
+        <ImageView
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_margin="10dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/head" />
+
+        <ImageView
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_margin="10dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sliding_bg" />
+    </LinearLayout>
+
+</com.example.customui.scroll.ElasticHorizontalScrollView>

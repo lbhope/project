@@ -1,11 +1,9 @@
 package com.example.customui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import com.example.customui.R;
 import com.example.customui.view.MyRadioButton;
 
 public class RadioButtonActivity extends BaseActivity {

@@ -1,6 +1,5 @@
 package com.example.customui.activity.scroll;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.example.customui.BaseActivity;
@@ -10,9 +9,9 @@ public class StickyNavActivity extends BaseActivity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.view_scroll_sticknav);
+		setContentView(R.layout.view_scroll_vertical_linearlayout);
+//		setContentView(R.layout.view_scroll_horizontal_layout);
 		System.out.println("---------StickyNavActivity-----onCreate->>>>>>>>>> ???");
 	}
 	/**

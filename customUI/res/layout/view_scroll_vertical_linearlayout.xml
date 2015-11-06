@@ -14,11 +14,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#FFccFF"
-            android:gravity="center"
-            android:text="hello"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:background="#FF22FF" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -28,11 +24,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#FF22FF"
-            android:gravity="center"
-            android:text="hello"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:background="#00FFFF" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -42,11 +34,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#aaccFF"
-            android:gravity="center"
-            android:text="hello"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:background="#FFeeFF" />
     </RelativeLayout>
 
 </com.example.customui.view.scroll.VerticalLinearLayout>

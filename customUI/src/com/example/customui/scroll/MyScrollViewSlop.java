@@ -1,18 +1,14 @@
 package com.example.customui.scroll;
 
-import com.example.customui.util.DensityUtil;
-import com.example.customui.util.Logger;
-
-import android.R.integer;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Scroller;
+
+import com.example.customui.util.Logger;
 
 public class MyScrollViewSlop extends ViewGroup {
 	public MyScrollViewSlop(Context context) {
@@ -30,32 +26,32 @@ public class MyScrollViewSlop extends ViewGroup {
 	private Context context;
 
 	/**
-	 * ÊÖÖ¸°´ÏÂXµÄ×ø±ê
+	 * ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private int downY;
 	/**
-	 * ÊÖÖ¸°´ÏÂYµÄ×ø±ê
+	 * ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private int downX;
 	/**
-	 * ÆÁÄ»¿í¶È
+	 * ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 	 */
 	private int screenWidth;
 	private int screenHeight;
 
 	/**
-	 * »¬¶¯Àà
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private Scroller mScroller;
 
 	private static final int SNAP_VELOCITY = 600;
 	/**
-	 * ËÙ¶È×·×Ù¶ÔÏó
+	 * ï¿½Ù¶ï¿½×·ï¿½Ù¶ï¿½ï¿½ï¿½
 	 */
 	private VelocityTracker velocityTracker;
 
 	/**
-	 * ÈÏÎªÊÇÓÃ»§»¬¶¯µÄ×îÐ¡¾àÀë
+	 * ï¿½ï¿½Îªï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½
 	 */
 	private int mTouchSlop;
 
@@ -122,20 +118,20 @@ public class MyScrollViewSlop extends ViewGroup {
 		case MotionEvent.ACTION_MOVE:
 			int deltaX = (int) (downX - event.getX());
 			downX = (int) event.getX();
-			// ÒÆ¶¯
+			// ï¿½Æ¶ï¿½
 			scrollBy(deltaX, 0);
 			break;
 		case MotionEvent.ACTION_UP:
-			// ÏòÓÒ»¬¶¯
+			// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½
 			int velocity = getScrollVelocity();
 			if (velocity > 0) {
-				Logger.getLogger().i("ÏòÓÒ  »¬¶¯ ...before "+mCurScreen);
+				Logger.getLogger().i("ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ...before "+mCurScreen);
 				snapToScreen(mCurScreen-1);
-				Logger.getLogger().i("ÏòÓÒ  »¬¶¯ ...after "+mCurScreen);
+				Logger.getLogger().i("ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ...after "+mCurScreen);
 			} else if(velocity<0) {
-				Logger.getLogger().i("Ïò×ó»¬¶¯...before "+mCurScreen);
+				Logger.getLogger().i("ï¿½ï¿½ï¿½ó»¬¶ï¿½...before "+mCurScreen);
 				snapToScreen(mCurScreen+1);
-				Logger.getLogger().i("Ïò×ó»¬¶¯...after "+mCurScreen);
+				Logger.getLogger().i("ï¿½ï¿½ï¿½ó»¬¶ï¿½...after "+mCurScreen);
 			}else {
 				snapToDestination();
 			}
@@ -147,7 +143,7 @@ public class MyScrollViewSlop extends ViewGroup {
 	}
 	
 	private void snapToScreen(int whichScreen) { 
-		// Ñ¡È¡ºÏÊÊµÄÎ»ÖÃ£¬·ÀÖ¹Ô½½ç
+		// Ñ¡È¡ï¿½ï¿½ï¿½Êµï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½Ö¹Ô½ï¿½ï¿½
 		whichScreen = Math.max(0, Math.min(whichScreen, getChildCount() - 1));
 		//getScrollX
 		if (getScrollX() != (whichScreen * getWidth())) {
@@ -170,10 +166,10 @@ public class MyScrollViewSlop extends ViewGroup {
 		final int destScreen = (getScrollX() + screenWidth / 2) / screenWidth;
 		snapToScreen(destScreen);
 	}
-	// ÔÚÖ´ÐÐÁËinvalidate()·½·¨Ö®ºó£¬³ÌÐò±ã»áÖ´ÐÐcomputeScroll()·½·¨
+	// ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½invalidate()ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ó£¬³ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½computeScroll()ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public void computeScroll() {
-		// ÅÐ¶Ï¶¯»­ÊÇ·ñÍê³É,·µ»Øtrue±íÊ¾¶¯»­Ã»ÓÐÍê³É
+		// ï¿½Ð¶Ï¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (mScroller.computeScrollOffset()) {
 			scrollTo(mScroller.getCurrX(), 0);
 			postInvalidate();
@@ -181,7 +177,7 @@ public class MyScrollViewSlop extends ViewGroup {
 	}
 
 	/**
-	 * Ìí¼ÓÓÃ»§µÄËÙ¶È¸ú×ÙÆ÷
+	 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ù¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param event
 	 */
@@ -194,7 +190,7 @@ public class MyScrollViewSlop extends ViewGroup {
 	}
 
 	/**
-	 * ÒÆ³ýÓÃ»§ËÙ¶È¸ú×ÙÆ÷
+	 * ï¿½Æ³ï¿½ï¿½Ã»ï¿½ï¿½Ù¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private void recycleVelocityTracker() {
 		if (velocityTracker != null) {
@@ -204,7 +200,7 @@ public class MyScrollViewSlop extends ViewGroup {
 	}
 
 	/**
-	 * »ñÈ¡X·½ÏòµÄ»¬¶¯ËÙ¶È,´óÓÚ0ÏòÓÒ»¬¶¯£¬·´Ö®Ïò×ó
+	 * ï¿½ï¿½È¡Xï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½,ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @return
 	 */

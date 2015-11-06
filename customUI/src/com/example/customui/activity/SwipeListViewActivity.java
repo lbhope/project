@@ -3,22 +3,16 @@ package com.example.customui.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.R.integer;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.customui.BaseActivity;
 import com.example.customui.R;
 import com.example.customui.adapter.CommonAdapter;
 import com.example.customui.adapter.ViewHolder;
-import com.example.customui.util.DensityUtil;
 import com.example.customui.util.Logger;
 import com.example.customui.view.SwipeListView;
 import com.example.customui.view.SwipeListView.RemoveItemListViewListener;
@@ -82,7 +76,7 @@ public class SwipeListViewActivity extends BaseActivity {
 			public void scrollFinish() {
 				textView=null;
 				if (position>=0) {
-					Logger.getLogger().i("----------------------->É¾³ýµÄÎ»ÖÃ£º "+position);
+					Logger.getLogger().i("----------------------->É¾ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ "+position);
 					dataSourceList.remove(position);
 					mAdapter.notifyDataSetChanged();
 					position= -1;

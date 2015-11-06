@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -47,7 +46,7 @@ public class ScllorTabView extends View {
 			mTabWidth = mWidth / mTabNum;
 		}
 		mPaint.setColor(android.R.color.holo_green_light);
-		// ¸ù¾ÝÎ»ÖÃºÍÆ«ÒÆÁ¿À´¼ÆËã»¬¶¯ÌõµÄÎ»ÖÃ
+		// ï¿½ï¿½ï¿½Î»ï¿½Ãºï¿½Æ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã»¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 		float left = (mCurrentNum + mOffset) * mTabWidth;
 		final float right = left + mTabWidth;
 		final float top = getPaddingTop();

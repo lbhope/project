@@ -1,7 +1,5 @@
 package com.example.customui.view;
 
-import com.example.customui.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -11,6 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.customui.R;
 
 public class ImageTextButton extends LinearLayout {
 
@@ -28,7 +28,7 @@ public class ImageTextButton extends LinearLayout {
 		mButton = (ImageButton) view.findViewById(R.id.btn1);
 		mTextView = (TextView) view.findViewById(R.id.text1);
 
-		//ÐÞ¸Ä×Ô¶¨Òå¿Ø¼þÊµÏÖ´úÂë£¬ÒÔ»ñÈ¡xmlÖÐ¶¨ÒåµÄÊôÐÔµÄÖµ
+		//ï¿½Þ¸ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ø¼ï¿½Êµï¿½Ö´ï¿½ï¿½ë£¬ï¿½Ô»ï¿½È¡xmlï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½Öµ
 		TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.ImageTextButton);
 		CharSequence text = a.getText(R.styleable.ImageTextButton_android_text);
 		if (text != null)

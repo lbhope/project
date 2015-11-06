@@ -2,13 +2,13 @@ package com.example.customui;
 
 import java.util.Stack;
 
-import com.example.customui.util.DevicesUtils;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+
+import com.example.customui.util.DevicesUtils;
 
 /**
  * Created by andy on 6/3/14.

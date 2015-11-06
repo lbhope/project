@@ -1,8 +1,5 @@
 package com.example.customui.widget.testview;
 
-import com.example.customui.R;
-import com.example.customui.util.DensityUtil;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,6 +10,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.example.customui.R;
+import com.example.customui.util.DensityUtil;
 
 public class CircleVoiceView extends View {
 

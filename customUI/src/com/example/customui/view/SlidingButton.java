@@ -7,13 +7,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.example.customui.R;
 
 /**
- * ©иртвтсив╖мп╣д©ь╪Ч
+ * О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫в╖О©╫п╣д©ь╪О©╫
  * 
  * @author libin
  * 
@@ -24,9 +23,9 @@ public class SlidingButton extends TextView {
 	private Paint paint;
 	private Bitmap bitmap;
 	private boolean isPicked;
-	/** * ╪гб╪╣Ц╩В╣дн╩жц╨мио╢нкЫтзн╩жц╣дф╚рф */
+	/** * О©╫О©╫б╪О©╫О©╫О©╫О©╫О©╫н╩О©╫ц╨О©╫О©╫о╢О©╫О©╫О©╫О©╫О©╫н╩О©╫ц╣О©╫ф╚О©╫О©╫ */
 	private float offSetX = 0;
-	/** * ╪гб╪╣Ц╩В╣дн╩жц╨мио╢нкЫтзн╩жц╣дф╚рф */
+	/** * О©╫О©╫б╪О©╫О©╫О©╫О©╫О©╫н╩О©╫ц╨О©╫О©╫о╢О©╫О©╫О©╫О©╫О©╫н╩О©╫ц╣О©╫ф╚О©╫О©╫ */
 	private float offSetY = 0;
 
 	public SlidingButton(Context context) {
