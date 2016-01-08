@@ -211,7 +211,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int view_background=0x7f01000d;
     }
     public static final class color {
-        public static final int blue_shallow=0x7f050000;
+        public static final int blue_shallow=0x7f060000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -220,8 +220,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
     }
     public static final class drawable {
         public static final int bg=0x7f020000;
@@ -239,40 +239,40 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int text_wbcolor_selector=0x7f02000c;
     }
     public static final class id {
-        public static final int Horizontal=0x7f0a0000;
-        public static final int Vertical=0x7f0a0001;
-        public static final int action_settings=0x7f0a0021;
-        public static final int btn1=0x7f0a0006;
-        public static final int btn_radio=0x7f0a0002;
-        public static final int btn_scroll_layout=0x7f0a0004;
-        public static final int btn_textedit1=0x7f0a0003;
-        public static final int dynamic_aft_1=0x7f0a000b;
-        public static final int dynamic_btn_1=0x7f0a0009;
-        public static final int dynamic_parent=0x7f0a0007;
-        public static final int dynamic_pre_1=0x7f0a000a;
-        public static final int dynamic_row_1=0x7f0a0008;
-        public static final int et_textview=0x7f0a0014;
-        public static final int et_textview2=0x7f0a0015;
-        public static final int id_gestureLockViewGroup=0x7f0a0011;
-        public static final int id_main_ly=0x7f0a0016;
-        public static final int img_author=0x7f0a001d;
-        public static final int img_bar=0x7f0a001f;
-        public static final int img_tools=0x7f0a0020;
-        public static final int iv_button_icon=0x7f0a0018;
-        public static final int ivt_image1=0x7f0a000d;
-        public static final int ivt_image2=0x7f0a000c;
-        public static final int list_item=0x7f0a000f;
-        public static final int ll_top=0x7f0a001c;
-        public static final int lv_data=0x7f0a0013;
-        public static final int msv=0x7f0a0010;
-        public static final int rb_radio=0x7f0a0012;
-        public static final int scroller=0x7f0a001a;
-        public static final int stick_title=0x7f0a0017;
-        public static final int text1=0x7f0a0005;
-        public static final int tv_button_text=0x7f0a0019;
-        public static final int tv_content=0x7f0a001b;
-        public static final int tv_show_info=0x7f0a000e;
-        public static final int tv_title=0x7f0a001e;
+        public static final int Horizontal=0x7f050000;
+        public static final int Vertical=0x7f050001;
+        public static final int action_settings=0x7f050021;
+        public static final int btn1=0x7f050006;
+        public static final int btn_radio=0x7f050002;
+        public static final int btn_scroll_layout=0x7f050004;
+        public static final int btn_textedit1=0x7f050003;
+        public static final int dynamic_aft_1=0x7f05000b;
+        public static final int dynamic_btn_1=0x7f050009;
+        public static final int dynamic_parent=0x7f050007;
+        public static final int dynamic_pre_1=0x7f05000a;
+        public static final int dynamic_row_1=0x7f050008;
+        public static final int et_textview=0x7f050014;
+        public static final int et_textview2=0x7f050015;
+        public static final int id_gestureLockViewGroup=0x7f050011;
+        public static final int id_main_ly=0x7f050016;
+        public static final int img_author=0x7f05001d;
+        public static final int img_bar=0x7f05001f;
+        public static final int img_tools=0x7f050020;
+        public static final int iv_button_icon=0x7f050018;
+        public static final int ivt_image1=0x7f05000d;
+        public static final int ivt_image2=0x7f05000c;
+        public static final int list_item=0x7f05000f;
+        public static final int ll_top=0x7f05001c;
+        public static final int lv_data=0x7f050013;
+        public static final int msv=0x7f050010;
+        public static final int rb_radio=0x7f050012;
+        public static final int scroller=0x7f05001a;
+        public static final int stick_title=0x7f050017;
+        public static final int text1=0x7f050005;
+        public static final int tv_button_text=0x7f050019;
+        public static final int tv_content=0x7f05001b;
+        public static final int tv_show_info=0x7f05000e;
+        public static final int tv_title=0x7f05001e;
     }
     public static final class layout {
         public static final int activity_main=0x7f040000;
@@ -300,7 +300,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zhihu_detail_main=0x7f040016;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0a0000;
     }
     public static final class mipmap {
         public static final int zhihu_action_bar=0x7f030000;
@@ -308,13 +308,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zhihu_bottom=0x7f030002;
     }
     public static final class string {
-        public static final int action_settings=0x7f070001;
-        public static final int app_name=0x7f070000;
-        public static final int content=0x7f070006;
-        public static final int hello_world=0x7f070002;
-        public static final int textEdit=0x7f070004;
-        public static final int textEdit2=0x7f070005;
-        public static final int textRadio=0x7f070003;
+        public static final int action_settings=0x7f080001;
+        public static final int app_name=0x7f080000;
+        public static final int content=0x7f080006;
+        public static final int hello_world=0x7f080002;
+        public static final int textEdit=0x7f080004;
+        public static final int textEdit2=0x7f080005;
+        public static final int textRadio=0x7f080003;
     }
     public static final class style {
         /** 
@@ -338,11 +338,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f090001;
     }
     public static final class styleable {
         /** Attributes that can be used with a EditTextView.
