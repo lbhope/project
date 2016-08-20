@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2013 David Schreiber
+  ~           2013 John Paul Nalog
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+-->
+<resources>
+
+    <declare-styleable name="FancyCoverFlow">
+        <attr name="unselectedAlpha" format="float" />
+        <attr name="unselectedSaturation" format="float" />
+        <attr name="unselectedScale" format="float" />
+        <attr name="maxRotation" format="integer" />
+        <attr name="scaleDownGravity" format="float" />
+        <attr name="actionDistance" format="integer">
+            <enum name="auto" value="2147483647" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ViewPager3D">
+
+        <!-- Determines the amount of rotation during over scroll. Maximum rotation angle is 90 degrees divided by thisÏ value. Default is 2 -->
+        <attr name="overscroll_rotation" format="float" />
+        <!--
+        determines the maximum amount of translation along the z-axis during the overscroll. 
+        Default is 150.
+        -->
+        <attr name="overscroll_translation" format="integer" />
+        <!-- Controls maximum rotation during swipe. Maximum rotation angle is 90 degrees divided by this value. Default is 3. -->
+        <attr name="swipe_rotation" format="float" />
+        <!-- Maximum z-translation during swipe. Default = 100. -->
+        <attr name="swipe_translation" format="integer" />
+        <!-- Duration of animation when user releases the over scroll. Default is 400 ms. -->
+        <attr name="overscroll_animation_duration" format="integer" />
+        <!-- if true the alpha value of the children views is decreased as they scroll out of the screen. Default is false because of performance issues -->
+        <attr name="animate_alpha" format="boolean" />
+    </declare-styleable>
+    
+    
+    
+    <declare-styleable name="ParcentLayout">
+        <attr name="parcentWidth" format="float" />
+        <attr name="parcentHeight" format="float" />
+        <attr name="parcentTextSize" format="string" />
+    </declare-styleable>
+
+</resources>

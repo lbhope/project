@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <com.example.zzl.scroll.ZoomListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#f5f5f5"
+        android:dividerHeight="0.5dip"
+        android:listSelector="@null" >
+    </com.example.zzl.scroll.ZoomListView>
+
+    <LinearLayout
+        android:id="@+id/ll_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="#3FB1F5"
+        android:gravity="center_vertical"
+        android:padding="5dip" >
+
+        <ImageView
+            android:layout_width="25dip"
+            android:layout_height="30dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/up_arraw" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_weight="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/set" />
+    </LinearLayout>
+
+</FrameLayout>

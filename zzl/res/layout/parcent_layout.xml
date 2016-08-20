@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <com.example.zzl.viewgroup.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#ff44aacc"
+            android:gravity="center"
+            android:text="width:55%,height:5%,ts:60%h"
+            android:textColor="#ffffff"
+            app:parcentHeight="0.05"
+            app:parcentTextSize="60%h"
+            app:parcentWidth="0.55" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dip"
+            android:background="#ff99aacc"
+            android:gravity="center"
+            android:text="width:75%,height:20%,ts:40%h"
+            android:textColor="#ffffff"
+            app:parcentHeight="0.1"
+            app:parcentTextSize="40%h"
+            app:parcentWidth="0.75" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dip"
+            android:background="#ff4455cc"
+            android:gravity="center"
+            android:text="width:90%,height:30%,ts:20%h"
+            android:textColor="#ffffff"
+            app:parcentHeight="0.2"
+            app:parcentTextSize="20%h"
+            app:parcentWidth="0.9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dip"
+            android:background="#ff44aa77"
+            android:gravity="center"
+            android:text="width:100%,height:40%,ts:10%h"
+            android:textColor="#ffffff"
+            app:parcentHeight="0.4"
+            app:parcentTextSize="10%h"
+            app:parcentWidth="1" />
+    </com.example.zzl.viewgroup.PercentLinearLayout>
+
+</ScrollView>
