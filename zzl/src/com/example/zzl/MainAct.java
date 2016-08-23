@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.zzl.activity.anim.AnimActivity;
+import com.example.zzl.activity.jni.JniActivity;
 import com.example.zzl.activity.scroll.ZoomActivity;
 import com.example.zzl.font.FontMainActivity;
 
@@ -51,6 +52,8 @@ public class MainAct extends Activity{
 		mArrayList.add("仿QQ空间下拉背景图片放大效果");
 		mActivities.add(AnimActivity.class);
 		mArrayList.add("属性动画介绍");
+		mActivities.add(JniActivity.class);
+		mArrayList.add("jni开发");
 		
 		
 	}

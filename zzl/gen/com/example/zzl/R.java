@@ -186,17 +186,18 @@ containing a value of this type.
     }
     public static final class id {
         public static final int auto=0x7f040000;
-        public static final int awesomepager=0x7f04000d;
+        public static final int awesomepager=0x7f04000e;
         public static final int btn=0x7f040006;
         public static final int btn_anim=0x7f040002;
+        public static final int btn_simple=0x7f040008;
         public static final int btn_value_anim=0x7f040003;
-        public static final int dialog_edittext=0x7f040008;
-        public static final int fancyCoverFlow=0x7f040009;
+        public static final int dialog_edittext=0x7f040009;
+        public static final int fancyCoverFlow=0x7f04000a;
         public static final int id_rela=0x7f040007;
-        public static final int iv_bg_header=0x7f04000b;
+        public static final int iv_bg_header=0x7f04000c;
         public static final int iv_img=0x7f040004;
-        public static final int listview=0x7f04000a;
-        public static final int ll_title_bar=0x7f04000c;
+        public static final int listview=0x7f04000b;
+        public static final int ll_title_bar=0x7f04000d;
         public static final int page_container=0x7f040001;
         public static final int viewpager=0x7f040005;
     }
@@ -206,16 +207,17 @@ containing a value of this type.
         public static final int content_main=0x7f030002;
         public static final int event_dispatch=0x7f030003;
         public static final int font_roate=0x7f030004;
-        public static final int layout_dialog=0x7f030005;
-        public static final int layout_inflate_example=0x7f030006;
-        public static final int list_item=0x7f030007;
-        public static final int main=0x7f030008;
-        public static final int main_act_main=0x7f030009;
-        public static final int page_item=0x7f03000a;
-        public static final int parcent_layout=0x7f03000b;
-        public static final int scroll_zoom_header=0x7f03000c;
-        public static final int scroll_zoom_main=0x7f03000d;
-        public static final int v_main=0x7f03000e;
+        public static final int jni_main=0x7f030005;
+        public static final int layout_dialog=0x7f030006;
+        public static final int layout_inflate_example=0x7f030007;
+        public static final int list_item=0x7f030008;
+        public static final int main=0x7f030009;
+        public static final int main_act_main=0x7f03000a;
+        public static final int page_item=0x7f03000b;
+        public static final int parcent_layout=0x7f03000c;
+        public static final int scroll_zoom_header=0x7f03000d;
+        public static final int scroll_zoom_main=0x7f03000e;
+        public static final int v_main=0x7f03000f;
     }
     public static final class string {
         public static final int app_name=0x7f070000;
