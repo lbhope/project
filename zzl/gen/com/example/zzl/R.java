@@ -186,18 +186,20 @@ containing a value of this type.
     }
     public static final class id {
         public static final int auto=0x7f040000;
-        public static final int awesomepager=0x7f04000e;
+        public static final int awesomepager=0x7f040010;
         public static final int btn=0x7f040006;
         public static final int btn_anim=0x7f040002;
+        public static final int btn_create_patch=0x7f040009;
         public static final int btn_simple=0x7f040008;
+        public static final int btn_unit=0x7f04000a;
         public static final int btn_value_anim=0x7f040003;
-        public static final int dialog_edittext=0x7f040009;
-        public static final int fancyCoverFlow=0x7f04000a;
+        public static final int dialog_edittext=0x7f04000b;
+        public static final int fancyCoverFlow=0x7f04000c;
         public static final int id_rela=0x7f040007;
-        public static final int iv_bg_header=0x7f04000c;
+        public static final int iv_bg_header=0x7f04000e;
         public static final int iv_img=0x7f040004;
-        public static final int listview=0x7f04000b;
-        public static final int ll_title_bar=0x7f04000d;
+        public static final int listview=0x7f04000d;
+        public static final int ll_title_bar=0x7f04000f;
         public static final int page_container=0x7f040001;
         public static final int viewpager=0x7f040005;
     }

@@ -5,9 +5,9 @@
     android:id="@+id/page_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dip"
+    android:background="@android:color/white"
     android:orientation="vertical"
-    android:background="@android:color/white" >
+    android:padding="10dip" >
 
     <Button
         android:id="@+id/btn_simple"
@@ -17,12 +17,19 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btn_value_anim"
+        android:id="@+id/btn_create_patch"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_toRightOf="@+id/btn_anim"
-        android:text="属性动画"
+        android:text="生成差分包"
         android:textSize="14sp" />
- 
+
+    <Button
+        android:id="@+id/btn_unit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@+id/btn_anim"
+        android:text="合并"
+        android:textSize="14sp" />
 
 </LinearLayout>
