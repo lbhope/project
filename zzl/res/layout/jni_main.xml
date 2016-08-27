@@ -31,5 +31,12 @@
         android:layout_toRightOf="@+id/btn_anim"
         android:text="合并"
         android:textSize="14sp" />
+    <Button
+        android:id="@+id/btn_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@+id/btn_anim"
+        android:text="jni动态注册函数"
+        android:textSize="14sp" />
 
 </LinearLayout>

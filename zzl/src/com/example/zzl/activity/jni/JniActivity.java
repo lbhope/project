@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.zzl.R;
 import com.example.zzl.jni.BsDiffPatch;
+import com.example.zzl.jni.DynamicLoad;
 import com.example.zzl.jni.JChild;
 import com.example.zzl.utils.ApkUtils;
 import com.example.zzl.utils.AssetsUtils;
@@ -27,14 +28,14 @@ import com.lidroid.xutils.view.annotation.ViewInject;
  * @author libin
  * 
  */
-public class JniActivity extends Activity {
+public class JniActivity extends Activity implements OnClickListener{
 
 	private static final String TAG = "JniActivity";
 	private JChild jChild;
 	static {
-		System.loadLibrary("bsdiff");
-		System.loadLibrary("bspatch");
-//		System.loadLibrary("jni");
+//		System.loadLibrary("bsdiff");
+//		System.loadLibrary("bspatch");
+		System.loadLibrary("jni");
 	}
 
 	static void log(String msg) {
@@ -47,6 +48,8 @@ public class JniActivity extends Activity {
 	Button btn_create_patch;
 	@ViewInject(R.id.btn_unit)
 	Button btn_unit;
+	@ViewInject(R.id.btn_dynamic)
+	Button btn_dynamic;
 
 	private static String SDCARD = "";
 
@@ -114,6 +117,8 @@ public class JniActivity extends Activity {
 
 			}
 		});
+		
+		btn_dynamic.setOnClickListener(this);
 	}
 
 	class Task extends AsyncTask<Boolean, Void, Boolean> {
@@ -194,6 +199,19 @@ public class JniActivity extends Activity {
 			if (files[i].exists()) {
 				files[i].delete();
 			}
+		}
+	}
+
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_dynamic:
+			DynamicLoad.init();
+			DynamicLoad.dynamic();
+			break;
+		default:
+			break;
 		}
 	}
 }
