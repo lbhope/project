@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -50,6 +51,8 @@ public class JniActivity extends Activity implements OnClickListener{
 	Button btn_unit;
 	@ViewInject(R.id.btn_dynamic)
 	Button btn_dynamic;
+	@ViewInject(R.id.btn_thread)
+	Button btn_thread;
 
 	private static String SDCARD = "";
 
@@ -119,6 +122,7 @@ public class JniActivity extends Activity implements OnClickListener{
 		});
 		
 		btn_dynamic.setOnClickListener(this);
+		btn_thread.setOnClickListener(this);
 	}
 
 	class Task extends AsyncTask<Boolean, Void, Boolean> {
@@ -209,6 +213,9 @@ public class JniActivity extends Activity implements OnClickListener{
 		case R.id.btn_dynamic:
 			DynamicLoad.init();
 			DynamicLoad.dynamic();
+			break;
+		case R.id.btn_thread:
+			startActivity(new Intent(this,ThreadAcitivity.class));
 			break;
 		default:
 			break;

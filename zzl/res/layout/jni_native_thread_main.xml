@@ -9,37 +9,49 @@
     android:orientation="vertical"
     android:padding="10dip" >
 
-    <Button
-        android:id="@+id/btn_simple"
+    <EditText
+        android:id="@+id/et_thread_num"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="简单实例"
+        android:hint="线程个数"
+        android:inputType="number"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_exec_num"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@+id/btn_anim"
+        android:hint="循环次数"
+        android:inputType="number"
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btn_create_patch"
+        android:id="@+id/btn_android_thread"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="生成差分包"
+        android:layout_toRightOf="@+id/btn_anim"
+        android:text="线程在android原生"
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btn_unit"
+        android:id="@+id/btn_ndk_thread"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="合并"
+        android:layout_toRightOf="@+id/btn_anim"
+        android:text="线程在ndk里面"
         android:textSize="14sp" />
-    <Button
-        android:id="@+id/btn_dynamic"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:text="jni动态注册函数"
-        android:textSize="14sp" />
-    <Button
-        android:id="@+id/btn_thread"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:text="原生线程和native线程"
-        android:textSize="14sp" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" >
+
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14sp" />
+    </ScrollView>
 
 </LinearLayout>

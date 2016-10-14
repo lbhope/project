@@ -7,8 +7,13 @@ LOCAL_SRC_FILES :=jchild.c dynamic.c
 
 LOCAL_LDLIBS += -llog  #开启日志
 include $(BUILD_SHARED_LIBRARY)  
-
  
+#nativethread线程模块
+include $(CLEAR_VARS)  
+LOCAL_MODULE    :=nativethread  
+LOCAL_SRC_FILES :=nativethread.cpp
+LOCAL_LDLIBS += -llog  #开启日志
+include $(BUILD_SHARED_LIBRARY)  
 
 # 增量更新，编译时需要分开编译
 # bspatch合并包，bsdiff生成差分包

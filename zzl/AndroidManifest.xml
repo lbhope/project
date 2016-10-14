@@ -36,6 +36,7 @@
         <activity android:name=".activity.scroll.ZoomActivity" />
         <activity android:name=".activity.anim.AnimActivity" />
         <activity android:name=".activity.jni.JniActivity" />
+        <activity android:name=".activity.jni.ThreadAcitivity" />
     </application>
 
 </manifest>
