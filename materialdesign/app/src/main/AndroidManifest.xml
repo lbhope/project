@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zero.materialdesign">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity android:name="com.zero.materialdesign.materialtext.TextInputActivity"
+            android:theme="@style/MaterialAppTheme"/>
+        <activity android:name="com.zero.materialdesign.materialbutton.MaterialButtonActivity" />
+        <activity android:name="com.zero.materialdesign.nestedscroll.activity.NestScrollActivity" />
+        <activity android:name="com.zero.materialdesign.z.ZActivity" />
+        <activity
+            android:name="com.zero.materialdesign.chips.ChipsActivity"
+            android:theme="@style/MaterialAppTheme" />
+        <activity
+            android:name="com.zero.materialdesign.bottomAppBar.BottomAppBarActivity"
+            android:theme="@style/MaterialAppTheme" />
+        <activity
+            android:name="com.zero.materialdesign.viewpager2.ViewPager2Activity"
+            android:theme="@style/MaterialAppTheme" />
+        <activity
+            android:name="com.zero.materialdesign.coordinator.CoordinatorActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.zero.materialdesign.cardview.CardViewActivity"
+            android:label="CardView" />
+        <activity
+            android:name="com.zero.materialdesign.drawer.DrawerLayoutActivity"
+            android:label="@string/title_activity_drawer_layout"
+            android:theme="@style/MaterialAppThemeNoActionBar" />
+        <activity android:name="com.zero.materialdesign.bottomsheets.BottomSheetsActivity" />
+        <activity
+            android:name="com.zero.materialdesign.tab.TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/MaterialAppThemeNoActionBar" />
+        <activity android:name="com.zero.materialdesign.floatingactionbutton.FloatActionButtonActivity" />
+        <activity android:name="com.zero.materialdesign.snackbar.SnackBarActivity" />
+        <activity
+            android:name="com.zero.materialdesign.navigation.CloudMusicActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name="com.zero.materialdesign.translucent.QQMusicActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name="com.zero.materialdesign.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zero.materialdesign.toolbar.ToolbarActivity"
+            android:label="ToolBar演示"
+            android:parentActivityName="com.zero.materialdesign.MainActivity"
+            android:theme="@style/ToolBarAppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zero.materialdesign.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
